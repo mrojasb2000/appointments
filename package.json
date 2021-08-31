@@ -1,12 +1,16 @@
 {
   "name": "appointments",
   "version": "1.0.0",
-  "description": "",
+  "description": "Appointments system",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "jest": "^27.1.0"
+  }
 }
