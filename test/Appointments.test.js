@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM, { render } from 'react-dom';
 
 import { Appointment, AppointmentsDayView } from '../src/Appointment';
 
@@ -25,6 +25,26 @@ describe('Appointments', () => {
     })
 });
 
+describe('Appointments', () => {
+    let container;
+    let customer;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+    });
+
+    const render = component => ReactDOM.render(component, container);
+    it('renders multiple appointments in an ol element', () => {
+        const today = new Date();
+        const appointments = [
+            { startAt: today.setHours(12, 0) },
+            { startAt: today.setHours(13, 0) }
+        ];
+        render(<AppointmentsDayView appointments={appointments} />);
+        expect(container.querySelector('ol')).not.toBeNull();
+        expect(container.querySelector('ol').children).toHaveLength(2);
+    })
+});
 describe('AppointmentsDayView', () => {
     let container;
 
