@@ -34,6 +34,12 @@ describe('Appointments', () => {
     });
 
     const render = component => ReactDOM.render(component, container);
+
+    it('render a div with the right id', () => {
+        render(<AppointmentsDayView appointments={[]} />)
+        expect(container.querySelector('div#appointmentsDayView')).not.toBeNull();
+    });
+
     it('renders multiple appointments in an ol element', () => {
         const today = new Date();
         const appointments = [
@@ -44,17 +50,4 @@ describe('Appointments', () => {
         expect(container.querySelector('ol')).not.toBeNull();
         expect(container.querySelector('ol').children).toHaveLength(2);
     })
-});
-describe('AppointmentsDayView', () => {
-    let container;
-
-    beforeEach(() => {
-        container = document.createElement('div');
-    });
-    const render = component => ReactDOM.render(component, container);
-
-    it('render a div with the right id', () => {
-        render(<AppointmentsDayView appointment={[]} />)
-        expect(container.querySelector('div#appointmentsDayView')).not.toBeNull();
-    });
 });
