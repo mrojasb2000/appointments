@@ -7,8 +7,8 @@ export const Appointment = ({ customer }) => (
 export const AppointmentsDayView = ({ appointments }) => (
 <div id="appointmentsDayView">
 <ol>
-{appointments.map((item, idx) => (
-<div key={idx}/>
+{appointments.map(appointment => (
+<div key={appointment.startAt}/>
 ))}
 </ol>
 </div>
