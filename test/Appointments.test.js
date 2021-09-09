@@ -25,7 +25,7 @@ describe('Appointments', () => {
     })
 });
 
-describe('Appointments', () => {
+describe('AppointmentsDayView', () => {
     let container;
 
     beforeEach(() => {
